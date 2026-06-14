@@ -1,178 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awatef Zamri | EcoTracker E-Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awatef Zamri | EcoTracker E-Portfolio</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            scroll-behavior:smooth;
-            font-family:Arial, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
 
-        body{
-            background:#f7faf5;
-            color:#2d3b24;
-        }
+body{
+    background:#f7faf5;
+    color:#26351f;
+    line-height:1.6;
+}
 
-        nav{
-            position:sticky;
-            top:0;
-            background:#3f5f2f;
-            padding:15px;
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            z-index:100;
-        }
+nav{
+    position:sticky;
+    top:0;
+    background:#243f03;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    z-index:1000;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            font-weight:bold;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        nav a:hover{
-            color:#d7efb5;
-        }
+nav a:hover{
+    color:#d7efb5;
+}
 
-        header{
-            min-height:80vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            background:linear-gradient(135deg,#3f5f2f,#6d8a45);
-            color:white;
-            padding:30px;
-        }
+header{
+    min-height:80vh;
+    background:linear-gradient(135deg,#243f03,#5f6f32);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px;
+}
 
-        .profile{
-            width:140px;
-            height:140px;
-            border-radius:50%;
-            background:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            color:#3f5f2f;
-            font-weight:bold;
-            margin-bottom:20px;
-        }
+.hero{
+    max-width:800px;
+}
 
-        section{
-            padding:80px 10%;
-        }
+.profile{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:white;
+    color:#243f03;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 20px;
+    font-weight:bold;
+    text-align:center;
+}
 
-        h2{
-            color:#3f5f2f;
-            margin-bottom:20px;
-        }
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
 
-        .card{
-            background:white;
-            padding:25px;
-            border-radius:15px;
-            margin-bottom:20px;
-            box-shadow:0 4px 12px rgba(0,0,0,0.08);
-        }
+.sdg{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:10px 20px;
+    border-radius:20px;
+    margin:20px 0;
+}
 
-        .skills{
-            display:flex;
-            flex-wrap:wrap;
-            gap:10px;
-        }
+    section{
+    padding:70px 10%;
+}
 
-        .skill{
-            background:#d7efb5;
-            padding:8px 15px;
-            border-radius:20px;
-            font-size:14px;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
 
-        .btn{
-            display:inline-block;
-            background:#3f5f2f;
-            color:white;
-            padding:10px 18px;
-            border-radius:8px;
-            text-decoration:none;
-            margin-top:10px;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
 
-        footer{
-            background:#3f5f2f;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-    </style>
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:#243f03;
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.skill{
+    display:inline-block;
+    background:#d7efb5;
+    padding:8px 15px;
+    border-radius:20px;
+    margin:5px;
+}
+
+footer{
+    background:#243f03;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.video{
+    margin-top:15px;
+}
+
+.video iframe{
+    width:100%;
+    height:220px;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#labs">Labs</a>
-    <a href="#project1">Project 1</a>
-    <a href="#project2">Project 2</a>
-    <a href="#reflection">Reflection</a>
-    <a href="#skills">Skills</a>
-    <a href="#resources">Resources</a>
+<a href="#home">Home</a>
+<a href="#labs">Labs</a>
+<a href="#project1">Project 1</a>
+<a href="#project2">Project 2</a>
+<a href="#reflection">Reflection</a>
+<a href="#skills">Skills</a>
 </nav>
 
 <header id="home">
-    <div class="profile">
-        Add Photo Later
-    </div>
+<div class="hero">
 
-    <h1>Awatef Zamri</h1>
-    <h3>A221019</h3>
+<div class="profile">
+Photo<br>Coming<br>Soon
+</div>
 
-    <p style="margin-top:15px;">
-        Mobile Application Programming
-    </p>
+<h1>Awatef Zamri</h1>
 
-    <p style="margin-top:15px;">
-        SDG 12: Responsible Consumption and Production
-    </p>
+<p>A221019</p>
 
-    <p style="margin-top:20px; max-width:700px;">
-        This e-Portfolio showcases my learning journey throughout the Mobile Application Programming course, highlighting laboratory activities and projects developed using Kotlin, Jetpack Compose, Firebase, APIs, and Android development tools.
-    </p>
+<p>Mobile Application Programming</p>
+
+<p>Instructor: Mr. Nelson Sana</p>
+
+<div class="sdg">
+SDG 12: Responsible Consumption and Production
+</div>
+
+<p>
+This e-Portfolio showcases my learning journey throughout the Mobile Application Programming course and documents the development of EcoTracker.
+</p>
+
+</div>
 </header>
 
-<section id="labs">
-    <h2>Laboratory Activities</h2>
+    <section id="labs">
+
+<div class="section-title">
+<h2>Laboratory Activities</h2>
+<p>Laboratory exercises completed throughout the semester.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Lab 1</h3>
+<p>
+Introduction to Android application development and user interface design using Jetpack Compose.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/MowpT5ouvbg"
+allowfullscreen></iframe>
+</div>
+
+<p>
+This lab introduced the basic concepts of Android development and helped me become familiar with the Android Studio environment.
+</p>
+</div>
+
+<div class="card">
+<h3>Lab 2</h3>
+<p>
+User interface implementation using Jetpack Compose components.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/MowpT5ouvbg"
+allowfullscreen></iframe>
+</div>
+
+<p>
+I learned how to arrange layouts, manage composables, and improve user experience through interface design.
+</p>
+</div>
+
+<div class="card">
+<h3>Lab 3</h3>
+<p>
+Material Design principles and modern Android user interface practices.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/_EJVi0CO72A"
+allowfullscreen></iframe>
+</div>
+
+<p>
+This activity strengthened my understanding of consistent design and visual hierarchy in mobile applications.
+</p>
+</div>
+
+<div class="card">
+<h3>Lab 4</h3>
+<p>
+Navigation between multiple screens using Navigation Compose.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/KExoIW5ZehY"
+allowfullscreen></iframe>
+</div>
+
+<p>
+I learned how to connect screens and create a smoother application flow for users.
+</p>
+</div>
+
+<div class="card">
+<h3>Lab 5</h3>
+<p>
+Local data persistence using Room Database.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/u17lapyM5Mg"
+allowfullscreen></iframe>
+</div>
+
+<p>
+This lab introduced Room Database concepts including entities, DAOs, and local storage management.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="project1">
-    <h2>Project 1</h2>
+    <section id="project1">
+
+<div class="section-title">
+<h2>Project 1 - EcoTracker</h2>
+<p>Initial development of the EcoTracker mobile application.</p>
+</div>
+
+<div class="card">
+
+<h3>Project Overview</h3>
+
+<p>
+EcoTracker was developed to support SDG 12 (Responsible Consumption and Production) by encouraging users to adopt environmentally responsible habits in their daily lives.
+</p>
+
+<p>
+The application allows users to record sustainable actions, monitor their progress, and learn about the impact of their behaviour on the environment.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/u17lapyM5Mg"
+allowfullscreen></iframe>
+</div>
+
+<h3>Features</h3>
+
+<ul>
+<li>Action logging system</li>
+<li>Progress tracking</li>
+<li>Sustainability awareness</li>
+<li>Navigation between screens</li>
+<li>User-friendly interface</li>
+</ul>
+
+<a class="btn"
+href="https://github.com/AwatefZamri/A221019_AWATEFZAMRI_SirNELSON_PROJECT1"
+target="_blank">
+View Project 1 GitHub
+</a>
+
+</div>
+
 </section>
 
 <section id="project2">
-    <h2>Project 2</h2>
+
+<div class="section-title">
+<h2>Project 2 - EcoTracker Advanced Version</h2>
+<p>Enhanced application with cloud, API and sensor integration.</p>
+</div>
+
+<div class="card">
+
+<h3>Project Overview</h3>
+
+<p>
+Project 2 expanded the functionality of EcoTracker by integrating advanced Android development concepts such as Firebase Firestore, REST API services, local persistence, and mobile hardware sensors.
+</p>
+
+<p>
+The goal was to create a more interactive and practical application that promotes sustainable consumption habits while meeting the requirements of SDG 12.
+</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/u17lapyM5Mg"
+allowfullscreen></iframe>
+</div>
+
+<h3>Advanced Features</h3>
+
+<ul>
+<li>Firebase Firestore integration</li>
+<li>REST API integration for live environmental information</li>
+<li>Camera sensor implementation</li>
+<li>Community sharing functionality</li>
+<li>Image gallery support</li>
+<li>Environmental impact tracking</li>
+<li>Multi-screen navigation flow</li>
+</ul>
+
+<h3>Technologies Used</h3>
+
+<ul>
+<li>Kotlin</li>
+<li>Jetpack Compose</li>
+<li>Firebase Firestore</li>
+<li>Retrofit</li>
+<li>REST API</li>
+<li>Android Camera Sensor</li>
+<li>GitHub</li>
+</ul>
+
+<a class="btn"
+href="https://github.com/AwatefZamri/A221019_AWATEFZAMRI_SirNELSON_PROJECT1"
+target="_blank">
+Project 2 GitHub (Temporary Link)
+</a>
+
+</div>
+
 </section>
 
-<section id="reflection">
-    <h2>Reflection</h2>
+    <section id="reflection">
+
+<div class="section-title">
+<h2>Reflection & Learning Journey</h2>
+<p>My experience throughout the Mobile Application Programming course.</p>
+</div>
+
+<div class="reflection-box">
+
+<p>
+Throughout this course, I progressively developed my mobile application development skills, starting from basic user interface design and advancing towards more complex concepts such as navigation, local data persistence, API integration, cloud services, and sensor implementation.
+</p>
+
+<br>
+
+<p>
+The laboratory activities provided valuable hands-on experience that helped strengthen my understanding of Android development using Kotlin and Jetpack Compose. Each activity introduced new concepts that were later applied in larger projects.
+</p>
+
+<br>
+
+<p>
+The development of EcoTracker enhanced my problem-solving abilities, debugging skills, and confidence in building mobile applications that address real-world sustainability issues aligned with SDG 12.
+</p>
+
+</div>
+
 </section>
 
 <section id="skills">
-    <h2>Skills & Tech Stack</h2>
+
+<div class="section-title">
+<h2>Skills & Technologies</h2>
+<p>Tools and technologies learned throughout the course.</p>
+</div>
+
+<div style="text-align:center;">
+
+<span class="skill">Kotlin</span>
+<span class="skill">Jetpack Compose</span>
+<span class="skill">Android Studio</span>
+<span class="skill">Navigation Compose</span>
+<span class="skill">Material Design</span>
+<span class="skill">Room Database</span>
+<span class="skill">Firebase Firestore</span>
+<span class="skill">Retrofit</span>
+<span class="skill">REST API</span>
+<span class="skill">Camera Sensor</span>
+<span class="skill">GitHub</span>
+<span class="skill">GitHub Pages</span>
+
+</div>
+
 </section>
 
 <section id="resources">
-    <h2>Resources</h2>
+
+<div class="section-title">
+<h2>Resources & References</h2>
+<p>References and learning resources used during development.</p>
+</div>
+
+<div class="card">
+
+<ul>
+<li>Android Developers Documentation</li>
+<li>Jetpack Compose Documentation</li>
+<li>Firebase Firestore Documentation</li>
+<li>Retrofit Documentation</li>
+<li>GitHub Documentation</li>
+<li>GitHub Pages Documentation</li>
+<li>Open-Meteo API</li>
+<li>AI assistance tools for learning, debugging and content organisation</li>
+</ul>
+
+</div>
+
 </section>
 
 <footer>
-    © 2026 Awatef Zamri | Mobile Application Programming
+
+<p>
+© 2026 Awatef Zamri | A221019
+</p>
+
+<p>
+Mobile Application Programming e-Portfolio
+</p>
+
 </footer>
 
 </body>
