@@ -1,151 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Awatef Zamri | EcoTracker E-Portfolio</title>
+<title>Awatef Zamri | EcoTracker e-Portfolio</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     scroll-behavior:smooth;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
+}
+
+:root{
+    --dark:#243019;
+    --green:#4f6f35;
+    --sage:#dfead2;
+    --cream:#f7faf3;
+    --white:#ffffff;
+    --text:#243019;
+    --muted:#5d6b52;
+    --shadow:0 8px 22px rgba(36,48,25,0.15);
 }
 
 body{
-    background:#f4f8f1;
-    color:#243019;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
 }
 
 nav{
     position:fixed;
     top:0;
     width:100%;
-    background:#243019;
-    padding:15px 8%;
+    background:rgba(36,48,25,0.96);
+    padding:14px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     z-index:1000;
+    box-shadow:0 4px 16px rgba(0,0,0,0.18);
 }
 
-nav h2{
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
     color:white;
+    font-weight:bold;
+}
+
+.logo-area img{
+    width:34px;
+    height:34px;
+    object-fit:contain;
 }
 
 nav ul{
     display:flex;
-    gap:20px;
+    gap:18px;
     list-style:none;
+    flex-wrap:wrap;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:var(--sage);
 }
 
 section{
-    padding:90px 8% 60px;
+    padding:85px 8%;
 }
 
 .hero{
     min-height:100vh;
+    background:
+        linear-gradient(rgba(36,48,25,0.68), rgba(36,48,25,0.72)),
+        url("sustainable pic.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
+    padding-top:110px;
+}
+
+.hero-content{
+    max-width:900px;
+    background:rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,0.25);
+    backdrop-filter:blur(6px);
+    padding:40px;
+    border-radius:26px;
+}
+
+.hero-logo{
+    width:95px;
+    height:95px;
+    object-fit:contain;
+    margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:3rem;
-    margin-bottom:10px;
+    font-size:44px;
+    margin-bottom:8px;
+}
+
+.hero h2{
+    font-size:20px;
+    font-weight:normal;
+    margin-bottom:18px;
+    color:#eef6e7;
+}
+
+.sdg-badge{
+    display:inline-block;
+    background:rgba(223,234,210,0.95);
+    color:var(--dark);
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    margin:14px 0 18px;
 }
 
 .hero p{
-    max-width:750px;
-    line-height:1.8;
+    max-width:760px;
+    margin:auto;
 }
 
 .section-title{
-    margin-bottom:30px;
+    text-align:center;
+    margin-bottom:35px;
 }
 
 .section-title h2{
-    font-size:2rem;
-    margin-bottom:10px;
+    font-size:34px;
+    color:var(--dark);
+    margin-bottom:8px;
 }
 
 .section-title p{
-    color:#4d6140;
+    color:var(--muted);
+    max-width:760px;
+    margin:auto;
 }
 
-.lab-container{
+.card{
+    background:white;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
+
+.lab-scroll{
     display:flex;
-    gap:20px;
+    gap:24px;
     overflow-x:auto;
     padding-bottom:15px;
+    scroll-snap-type:x mandatory;
+}
+
+.lab-scroll::-webkit-scrollbar{
+    height:10px;
+}
+
+.lab-scroll::-webkit-scrollbar-thumb{
+    background:var(--green);
+    border-radius:999px;
 }
 
 .lab-card{
-    min-width:320px;
+    min-width:600px;
     background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    flex-shrink:0;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:var(--shadow);
+    scroll-snap-align:start;
+}
+
+.lab-card h3{
+    color:var(--dark);
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.lab-card p{
+    margin-bottom:15px;
 }
 
 .lab-card iframe{
     width:100%;
-    height:180px;
+    height:340px;
     border:none;
-    border-radius:10px;
+    border-radius:18px;
+    margin-bottom:18px;
+}
+
+.learn-box{
+    background:#eef6e7;
+    border-left:5px solid var(--green);
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
 }
 
 .project-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
+    gap:30px;
 }
 
 .project-card{
     background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
 }
 
 .project-card iframe{
     width:100%;
-    height:220px;
+    height:320px;
     border:none;
-    border-radius:10px;
 }
 
-.btn{
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    margin-bottom:12px;
+    font-size:30px;
+}
+
+.project-content p{
+    margin-bottom:12px;
+}
+
+.github-btn{
     display:inline-block;
-    margin-top:10px;
-    padding:10px 15px;
-    background:#243019;
+    margin-top:15px;
+    background:var(--dark);
     color:white;
     text-decoration:none;
-    border-radius:8px;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
+.github-btn:hover{
+    background:var(--green);
+}
+
+.skill-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.skill{
+    background:var(--dark);
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.resource-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.resource-item{
+    background:white;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.resource-item a{
+    color:var(--green);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:32px;
+}
+
+.lab-card{
+    min-width:320px;
+}
+
+.project-grid{
+    grid-template-columns:1fr;
+}
+
+.project-card iframe{
+    height:230px;
+}
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+}
 </style>
 </head>
-
 <body>
 
 <nav>
-<h2>EcoTracker</h2>
+
+<div class="logo-area">
+<img src="plant.png" alt="logo">
+<span>EcoTracker</span>
+</div>
 
 <ul>
 <li><a href="#home">Home</a></li>
@@ -153,16 +343,30 @@ section{
 <li><a href="#projects">Projects</a></li>
 <li><a href="#reflection">Reflection</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#resources">Resources</a></li>
 </ul>
+
 </nav>
 
-<section id="home" class="hero">
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<img src="plant.png" class="hero-logo">
 
 <h1>Awatef Zamri</h1>
 
+<h2>Mobile Application Programming E-Portfolio</h2>
+
+<div class="sdg-badge">
+SDG 12: Responsible Consumption and Production
+</div>
+
 <p>
-Welcome to my Mobile Application Programming e-Portfolio. This portfolio showcases laboratory activities, project development, technical skills, and learning experiences throughout the course. The main project featured in this portfolio is EcoTracker, a mobile application developed to support Sustainable Development Goal 12: Responsible Consumption and Production.
+This e-Portfolio showcases the laboratory activities, projects, technical skills, and learning experiences gained throughout the Mobile Application Programming course. The main application developed for this course is EcoTracker, a sustainability-focused mobile application that encourages environmentally responsible habits through activity tracking, environmental awareness, and community engagement.
 </p>
+
+</div>
 
 </section>
 
@@ -170,39 +374,66 @@ Welcome to my Mobile Application Programming e-Portfolio. This portfolio showcas
 
 <div class="section-title">
 <h2>Lab Activities</h2>
-<p>Laboratory activities completed throughout the Mobile Application Programming course.</p>
+<p>
+This section presents the laboratory activities completed throughout the course. Each lab helped build my understanding of Android development step by step, from basic interface design to more advanced mobile application features.
+</p>
 </div>
 
-<div class="lab-container">
+<div class="lab-scroll">
 
 <div class="lab-card">
-<h3>Lab 1</h3>
-<p>Introduction to Android Studio and basic mobile application development concepts.</p>
-<a class="btn" href="#" target="_blank">Video Coming Soon</a>
-</div>
-
-<div class="lab-card">
-<h3>Lab 2</h3>
-<p>Android user interface design and layout implementation.</p>
+<h3>Lab 1: Introduction to Android Development</h3>
 <iframe src="https://www.youtube.com/embed/MowpT5ouvbg" allowfullscreen></iframe>
+<p>
+Lab 1 introduced the basic development environment and the foundation of creating a mobile application using Android Studio. This activity helped me become familiar with project structure, interface components, and the basic process of running an Android application.
+</p>
+<div class="learn-box">
+<strong>What I learned:</strong> I learned how Android projects are structured, how to work with the development environment, and how simple interface elements are arranged in a mobile application.
+</div>
 </div>
 
 <div class="lab-card">
-<h3>Lab 3</h3>
-<p>Activity navigation and application interaction features.</p>
+<h3>Lab 2: User Interface Design</h3>
+<iframe src="https://www.youtube.com/embed/MowpT5ouvbg" allowfullscreen></iframe>
+<p>
+Lab 2 focused on designing and improving the user interface of a mobile application. It involved arranging layout components, managing visual structure, and ensuring that the application interface is clear and easy for users to understand.
+</p>
+<div class="learn-box">
+<strong>What I learned:</strong> I learned the importance of spacing, alignment, readable text, and consistent interface design in creating a better user experience.
+</div>
+</div>
+
+<div class="lab-card">
+<h3>Lab 3: Interaction and Application Flow</h3>
 <iframe src="https://www.youtube.com/embed/_EJVi0CO72A" allowfullscreen></iframe>
+<p>
+Lab 3 introduced interactive application features and user input handling. This lab helped me understand how users interact with application components and how the application should respond to user actions.
+</p>
+<div class="learn-box">
+<strong>What I learned:</strong> I learned how interaction improves usability and how user input can be processed to make the application more functional.
+</div>
 </div>
 
 <div class="lab-card">
-<h3>Lab 4</h3>
-<p>Advanced Android development features and implementation.</p>
+<h3>Lab 4: Navigation Implementation</h3>
 <iframe src="https://www.youtube.com/embed/KExoIW5ZehY" allowfullscreen></iframe>
+<p>
+Lab 4 focused on navigation between application screens. This activity was important because navigation allows users to move smoothly between different sections of an application.
+</p>
+<div class="learn-box">
+<strong>What I learned:</strong> I learned how screen navigation supports application flow and how multiple screens can be connected to create a complete mobile application experience.
+</div>
 </div>
 
 <div class="lab-card">
-<h3>Lab 5</h3>
-<p>Mobile application enhancement and feature integration.</p>
+<h3>Lab 5: Data Persistence Concept</h3>
 <iframe src="https://www.youtube.com/embed/u17lapyM5Mg" allowfullscreen></iframe>
+<p>
+Lab 5 introduced the concept of storing and managing application data. This lab helped me understand why data persistence is important in mobile applications, especially when user information needs to be saved and retrieved.
+</p>
+<div class="learn-box">
+<strong>What I learned:</strong> I learned the role of data storage in mobile applications and how saved data can improve continuity and usefulness for users.
+</div>
 </div>
 
 </div>
@@ -213,26 +444,36 @@ Welcome to my Mobile Application Programming e-Portfolio. This portfolio showcas
 
 <div class="section-title">
 <h2>Projects</h2>
-<p>Major projects developed throughout the Mobile Application Programming course.</p>
+<p>
+The following projects demonstrate the knowledge and skills developed throughout the course, including user interface design, navigation, cloud integration, API communication, and sensor implementation.
+</p>
 </div>
 
 <div class="project-grid">
 
 <div class="project-card">
 
+<iframe src="https://www.youtube.com/embed/N1Bj3_AzqCk" allowfullscreen></iframe>
+
+<div class="project-content">
+
 <h3>Project 1: EcoTracker</h3>
 
 <p>
-EcoTracker is a mobile application developed to encourage environmentally responsible behaviour and support Sustainable Development Goal 12: Responsible Consumption and Production.
+<strong>Problem Statement:</strong>
+Many individuals wish to adopt environmentally responsible habits but often struggle to monitor and maintain sustainable actions consistently in their daily lives.
 </p>
 
-<br>
+<p>
+EcoTracker was developed to support Sustainable Development Goal 12 (Responsible Consumption and Production) by encouraging users to record environmentally friendly activities and monitor their sustainability progress.
+</p>
 
-<iframe src="https://www.youtube.com/embed/N1Bj3_AzqCk" allowfullscreen></iframe>
+<div class="learn-box">
+<strong>Lessons Learned:</strong>
+Through this project, I learned how to design a complete mobile application using Jetpack Compose, implement navigation between screens, organise application architecture, and create a user-friendly interface that supports sustainability awareness.
+</div>
 
-<br><br>
-
-<a class="btn"
+<a class="github-btn"
 href="https://github.com/AwatefZamri/A221019_AWATEFZAMRI_SirNELSON_PROJECT1"
 target="_blank">
 View GitHub Repository
@@ -240,25 +481,37 @@ View GitHub Repository
 
 </div>
 
+</div>
+
 <div class="project-card">
+
+<iframe src="https://www.youtube.com/embed/N1Bj3_AzqCk" allowfullscreen></iframe>
+
+<div class="project-content">
 
 <h3>Project 2: EcoTracker Enhanced Version</h3>
 
 <p>
-Project 2 extends EcoTracker by integrating Firebase Firestore, REST API communication, camera sensor functionality, image gallery support, community sharing, and sustainability impact tracking.
+<strong>Problem Statement:</strong>
+Users often require more engaging features and better access to environmental information to maintain long-term sustainable behaviour. Traditional activity tracking applications may lack real-time information, community interaction, and multimedia support.
 </p>
 
-<br>
+<p>
+Project 2 enhanced EcoTracker by integrating Firebase Firestore, REST API communication, camera functionality, image gallery support, environmental impact tracking, and community sharing features to create a more interactive sustainability platform.
+</p>
 
-<iframe src="https://www.youtube.com/embed/N1Bj3_AzqCk" allowfullscreen></iframe>
+<div class="learn-box">
+<strong>Lessons Learned:</strong>
+This project strengthened my understanding of cloud databases, REST API integration, camera sensor implementation, image handling, and real-time data management. It also improved my ability to combine multiple Android development technologies into a single application.
+</div>
 
-<br><br>
-
-<a class="btn"
+<a class="github-btn"
 href="#"
 target="_blank">
 Project 2 GitHub Repository
 </a>
+
+</div>
 
 </div>
 
@@ -270,19 +523,33 @@ Project 2 GitHub Repository
 
 <div class="section-title">
 <h2>Reflection</h2>
-<p>My learning journey throughout the Mobile Application Programming course.</p>
+<p>
+This section reflects on my learning experience throughout the Mobile Application Programming course.
+</p>
 </div>
 
-<div class="project-card">
+<div class="card">
 
 <p>
-Throughout this course, I developed my understanding of mobile application development using Android Studio, Kotlin, and Jetpack Compose. The laboratory activities helped me build technical knowledge step by step, starting from basic interface design and progressing towards navigation, database concepts, API integration, and sensor usage.
+Throughout this course, I developed my understanding of mobile application development using Android Studio, Kotlin, and Jetpack Compose. The laboratory activities helped me progressively strengthen my technical foundation, beginning with interface design and continuing towards navigation, data management, cloud integration, API communication, and sensor implementation.
 </p>
 
 <br>
 
 <p>
-Through Project 1 and Project 2, I learned how to plan, design, implement, and improve a mobile application based on a real-world sustainability problem. Developing EcoTracker also helped me understand how mobile technology can encourage users to practise more responsible consumption habits in their daily lives.
+The development of EcoTracker allowed me to apply theoretical knowledge in a practical environment by designing a complete mobile application that addresses a real-world sustainability issue. Through Project 1 and Project 2, I gained experience in planning application features, managing user interactions, integrating external technologies, and improving the overall user experience.
+</p>
+
+<br>
+
+<p>
+One of the most valuable lessons gained from this course was understanding how multiple technologies can work together within a single mobile application. Features such as Firebase Firestore, Retrofit API integration, image handling, camera functionality, and user activity tracking demonstrated how modern mobile applications provide dynamic and interactive experiences.
+</p>
+
+<br>
+
+<p>
+Overall, this course enhanced my technical confidence, problem-solving abilities, and understanding of Android application development. It also strengthened my appreciation for how technology can be used to encourage positive behavioural change and support sustainability initiatives.
 </p>
 
 </div>
@@ -293,22 +560,25 @@ Through Project 1 and Project 2, I learned how to plan, design, implement, and i
 
 <div class="section-title">
 <h2>Skills & Technologies</h2>
-<p>Technical skills and tools applied throughout the course.</p>
+<p>
+The following technologies and development tools were applied throughout the laboratory activities and project development process.
+</p>
 </div>
 
-<div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+<div class="skill-container">
 
-<span class="btn">Kotlin</span>
-<span class="btn">Jetpack Compose</span>
-<span class="btn">Android Studio</span>
-<span class="btn">Navigation Compose</span>
-<span class="btn">Firebase Firestore</span>
-<span class="btn">REST API</span>
-<span class="btn">Retrofit</span>
-<span class="btn">Camera Sensor</span>
-<span class="btn">Room Database</span>
-<span class="btn">GitHub</span>
-<span class="btn">GitHub Pages</span>
+<span class="skill">Kotlin</span>
+<span class="skill">Jetpack Compose</span>
+<span class="skill">Android Studio</span>
+<span class="skill">Navigation Compose</span>
+<span class="skill">Material Design</span>
+<span class="skill">Firebase Firestore</span>
+<span class="skill">Retrofit</span>
+<span class="skill">REST API</span>
+<span class="skill">Camera Sensor</span>
+<span class="skill">Room Database</span>
+<span class="skill">GitHub</span>
+<span class="skill">GitHub Pages</span>
 
 </div>
 
@@ -317,72 +587,82 @@ Through Project 1 and Project 2, I learned how to plan, design, implement, and i
 <section id="resources">
 
 <div class="section-title">
-<h2>Resources</h2>
-<p>Useful links related to the course and project development.</p>
+<h2>Resources & References</h2>
+<p>
+The following references, documentation, and development resources were used throughout the development of EcoTracker and this e-Portfolio.
+</p>
 </div>
 
-<div class="project-card">
+<div class="resource-list">
 
-<p><strong>GitHub Profile</strong></p>
-<a class="btn" href="https://github.com/AwatefZamri" target="_blank">
-Visit GitHub
+<div class="resource-item">
+<h3>Android Developers</h3>
+<p>
+Official Android development documentation used as a reference for Jetpack Compose, navigation, lifecycle management, and Android application architecture.
+</p>
+<a href="https://developer.android.com/" target="_blank">
+Visit Resource
 </a>
+</div>
 
-<br><br>
-
-<p><strong>E-Portfolio</strong></p>
-<a class="btn" href="https://awatefzamri.github.io/eportfolio/" target="_blank">
-Open Portfolio
+<div class="resource-item">
+<h3>Firebase Firestore</h3>
+<p>
+Official Firebase documentation used to implement cloud database functionality for storing and retrieving community posts.
+</p>
+<a href="https://firebase.google.com/docs/firestore" target="_blank">
+Visit Resource
 </a>
+</div>
+
+<div class="resource-item">
+<h3>Retrofit Documentation</h3>
+<p>
+Used as a reference for implementing REST API communication and retrieving environmental information from external services.
+</p>
+<a href="https://square.github.io/retrofit/" target="_blank">
+Visit Resource
+</a>
+</div>
+
+<div class="resource-item">
+<h3>Open-Meteo API</h3>
+<p>
+Environmental and air quality information provider used within EcoTracker to display real-time environmental awareness data.
+</p>
+<a href="https://open-meteo.com/" target="_blank">
+Visit Resource
+</a>
+</div>
+
+<div class="resource-item">
+<h3>GitHub Pages</h3>
+<p>
+Used to publish and host this e-Portfolio website for public access and academic submission purposes.
+</p>
+<a href="https://pages.github.com/" target="_blank">
+Visit Resource
+</a>
+</div>
+
+<div class="resource-item">
+<h3>Learning & Development Support</h3>
+<p>
+Additional learning resources, tutorials, documentation, and AI-assisted guidance were utilised to improve understanding, troubleshoot issues, and refine project implementation throughout the course.
+</p>
+</div>
 
 </div>
 
 </section>
 
-<footer style="
-background:#243019;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-">
+<footer>
 
 <p>
-© 2026 Awatef Zamri | Mobile Application Programming E-Portfolio
+© 2026 Awatef Zamri | A221019 | Mobile Application Programming e-Portfolio
 </p>
 
 </footer>
 
-<style>
-
-@media(max-width:768px){
-
-nav{
-    flex-direction:column;
-    gap:10px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.hero h1{
-    font-size:2rem;
-}
-
-.project-grid{
-    grid-template-columns:1fr;
-}
-
-.lab-card{
-    min-width:280px;
-}
-
-}
-
-</style>
-
 </body>
 </html>
-
